@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    
+}
+h1{
+    font-size: 4em;
+    text-align: center;
+    margin: 0px;
+}
+
+
+/*Classes*/
+.box{
+    border: 1px dashed red;
+    padding: 20px;
+    margin: 20px;
+}
+.gray{
+    background-color:#ccc;
+}
+.column{
+    float: left;
+    position: relative;
+    width: 33.333%;
+    padding: 20px;
+}
+.clearfix{
+    overflow:auto;
+}
+.flex-container{
+    display: flex;
+}
+.flex-column{/*new standard not supported by old browsers; IS THE FUTURE*/
+    flex: 1;
+    padding: 20px;
+}
+.order-1{
+    order: 1;
+}
+.order-2{
+    order: 2;
+}
+.order-3{
+    order: 3;
+}
+
+/*Ids*/
+#MainMenu ul{
+     background-color:black; 
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+#MainMenu li{
+    display: inline;
+    list-style-type: none;
+    
+}
+
+#MainMenu li a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 5px;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+/*making the webpage responsive on mobile*/
+/*media query is like another css file inside of main css file
+for an additional type of media*/
+@media screen and (max-width: 600px){
+    .column{
+        width: 100%; /*if you only change this, only affects float col*/
+    }   
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+     }
+    .flex-column{
+      flex-direction: column;
+    }
+    .order-1{
+        order: 0;
+    }
+    .order-2{ /*swap the two elements when resized*/
+        order: 2;
+    }
+    .order-3{
+        order: 1;
+    }
+}
